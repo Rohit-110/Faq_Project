@@ -5,7 +5,7 @@ from .models import FAQ
 from .serializers import FAQSerializer
 from googletrans import Translator
 
-# GET - Fetch all FAQs
+
 @api_view(['GET'])
 def get_faqs(request):
     lang = request.GET.get('lang', 'en')
@@ -13,7 +13,6 @@ def get_faqs(request):
     data = [{'question': faq.get_translation(lang), 'answer': faq.answer} for faq in faqs]
     return Response(data)
 
-# GET - Fetch a single FAQ by ID
 @api_view(['GET'])
 def get_faq(request, id):
     try:
@@ -24,7 +23,7 @@ def get_faq(request, id):
     except FAQ.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-# POST - Create a new FAQ
+
 @api_view(['POST'])
 def create_faq(request):
     if request.method == 'POST':
@@ -34,7 +33,7 @@ def create_faq(request):
             return Response(FAQSerializer(faq).data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# PUT - Update an existing FAQ
+
 @api_view(['PUT'])
 def update_faq(request, id):
     try:
@@ -48,7 +47,7 @@ def update_faq(request, id):
         return Response(serializer.data)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# DELETE - Delete an FAQ
+
 @api_view(['DELETE'])
 def delete_faq(request, id):
     try:

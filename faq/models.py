@@ -6,8 +6,8 @@ from googletrans import Translator
 class FAQ(models.Model):
     question = models.TextField()
     answer = RichTextField()
-    question_hi = models.TextField(blank=True, null=True)  # Hindi translation
-    question_bn = models.TextField(blank=True, null=True)  # Bengali translation
+    question_hi = models.TextField(blank=True, null=True) 
+    question_bn = models.TextField(blank=True, null=True) 
     
     def get_translation(self, lang):
         return getattr(self, f'question_{lang}', self.question)
