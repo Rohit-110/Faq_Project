@@ -12,7 +12,6 @@ Welcome to the **FAQ Management System**, a Django-based API that allows users t
 - **Fast Responses** with Redis caching
 - **Django Admin Panel** for easy FAQ management
 - **RESTful API** with language selection via `?lang=` query parameter
-- **Docker Support** for containerized deployment
 - **Comprehensive Testing** using `pytest`
 
 ---
@@ -36,7 +35,7 @@ cd faq-management
 ### 3️⃣ Set Up a Virtual Environment
 ```bash
 python -m venv venv
-source venv/bin/activate 
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
 ```
 
 ### 4️⃣ Install Dependencies
@@ -56,9 +55,31 @@ python manage.py runserver
 ```
 Now visit `http://127.0.0.1:8000/admin/` to manage FAQs.
 
+---
+
+## 📌 API Endpoints
+
+| Method | Endpoint        | Description |
+|--------|----------------|-------------|
+| GET    | `/api/faqs/`   | Fetch all FAQs |
+| GET    | `/api/faqs/?lang=hi` | Fetch FAQs in Hindi |
+| POST   | `/api/faqs/`   | Create a new FAQ |
+| PUT    | `/api/faqs/{id}/` | Update an FAQ |
+| DELETE | `/api/faqs/{id}/` | Delete an FAQ |
 
 
-## 🎨 WYSIWYG Editor Integration
+
+---
+
+##  Caching with Redis
+Redis is used to store translated FAQs for faster retrieval. To run Redis locally:
+```bash
+redis-server
+```
+
+---
+
+##  WYSIWYG Editor Integration
 The answer field in the FAQ model uses `django-ckeditor`, allowing users to format text easily. Ensure `ckeditor` is installed in `INSTALLED_APPS`.
 
 ---
@@ -72,5 +93,11 @@ pytest --ds=faq_project.settings
 ---
 
 
-Made By Rohit-110
+
+## 📜 License
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
+
+---
+
+Made with ❤️ by rohitpandey
 
