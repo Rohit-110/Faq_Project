@@ -90,14 +90,7 @@ To ensure everything is working properly, run the test suite:
 pytest --ds=faq_project.settings
 ```
 
----
 
-
-
-## 📜 License
-This project is licensed under the MIT License. Feel free to use and modify it as needed.
-
----
 
 Made with ❤️ by rohitpandey
 
