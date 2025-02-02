@@ -22,9 +22,7 @@ Welcome to the **FAQ Management System**, a Django-based API that allows users t
 Ensure you have the following installed:
 - Python (>=3.8)
 - Django (>=5.1)
-- PostgreSQL (or SQLite for local development)
 - Redis (for caching)
-- Docker (optional, for deployment)
 
 ### 2️⃣ Clone the Repository
 ```bash
@@ -71,18 +69,6 @@ Now visit `http://127.0.0.1:8000/admin/` to manage FAQs.
 
 ---
 
-##  Caching with Redis
-Redis is used to store translated FAQs for faster retrieval. To run Redis locally:
-```bash
-redis-server
-```
-
----
-
-##  WYSIWYG Editor Integration
-The answer field in the FAQ model uses `django-ckeditor`, allowing users to format text easily. Ensure `ckeditor` is installed in `INSTALLED_APPS`.
-
----
 
 ## 🧪 Running Tests
 To ensure everything is working properly, run the test suite:
@@ -92,5 +78,6 @@ pytest --ds=faq_project.settings
 
 
 
-Made with ❤️ by rohitpandey
+Author :- @rohit110
+
 
