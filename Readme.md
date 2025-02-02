@@ -35,7 +35,7 @@ cd faq-management
 ### 3️⃣ Set Up a Virtual Environment
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+source venv/bin/activate  
 ```
 
 ### 4️⃣ Install Dependencies
